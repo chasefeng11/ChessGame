@@ -1,0 +1,29 @@
+TEAM
+
+Jake Lee, jlee764
+Chase Feng, cfeng18
+Maddie Estey, mestey1
+
+DESIGN
+
+As seen in our UML diagram, there is a Game class, Board class, and Piece class. A game has a board, and a board has pieces. Then, 
+the kings, queens, rooks, etc (the chess pieces) are children of an abstract piece (is-a relationship). These relationships
+describe our program.
+
+We implemented the rule of three for Game and Board to simulate Games to check if pieces are checked by a move.
+
+Each time Game::point_value(), it loops through each remaning piece on the board of the given color, and return the sum of their
+piece-specific point values. To do this, for each piece, we call the pure virtual function in Piece.h, where it is overridden by
+the children classes returning the Piece::point_value() of the particular piece.
+
+COMPLETEDNESS
+
+As far as we are aware, all required functionality are implemented in this project.
+
+ADDITIONAL NOTES
+
+Helper.h was added to add ABS(), which returns the absolute value of a number. It was declared inline as it didn't require
+more than a line, and  was unnecessary to create a cpp file & an entry on Makefile just to use one function. Additionally,
+absolute was used in multiple files that it would've been tedious to create a child function in a class in all the required files.
+
+To complete this project we mostly used the pair programming method.
