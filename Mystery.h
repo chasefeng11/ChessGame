@@ -1,14 +1,9 @@
-///////////////////////////////////
-// IT IS OK TO MODIFY THIS FILE, //
-// YOU WON'T HAND IT IN!!!!!     //
-///////////////////////////////////
 #ifndef MYSTERY_H
 #define MYSTERY_H
 
 #include "Piece.h"
 
-namespace Chess
-{
+namespace Chess {
 	class Mystery : public Piece {
 
 	public:
@@ -16,9 +11,9 @@ namespace Chess
 
 		char to_ascii() const override { return is_white() ? 'M' : 'm';	}
     
-        std::string to_unicode() const override { return is_white() ? "\u2687" : "\u2689"; }
+        	std::string to_unicode() const override { return is_white() ? "\u2687" : "\u2689"; }
 
-        int point_value() const override { return 0; }
+        	int point_value() const override { return 0; }
 
 	private:
 		Mystery(bool is_white) : Piece(is_white) {}

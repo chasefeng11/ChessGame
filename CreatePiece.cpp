@@ -1,6 +1,3 @@
-/////////////////////////////////
-// DO NOT MODIFY THIS FILE!!!! //
-/////////////////////////////////
 #include <cstddef>
 #include "CreatePiece.h"
 #include "Pawn.h"
@@ -11,8 +8,7 @@
 #include "King.h"
 #include "Mystery.h"
 
-namespace Chess
-{
+namespace Chess {
 
 	Piece* create_piece(const char& piece_designator) {
 		switch (piece_designator) {

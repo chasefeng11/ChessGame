@@ -1,13 +1,9 @@
-/////////////////////////////////
-// DO NOT MODIFY THIS FILE!!!! //
-/////////////////////////////////
 #ifndef CREATE_PIECE_H
 #define CREATE_PIECE_H
 
 #include "Piece.h"
 
-namespace Chess
-{
+namespace Chess {
 	// This function returns a pointer to a piece of the specified type
 	// The piece designator should be one of:
 	//	'K': white king

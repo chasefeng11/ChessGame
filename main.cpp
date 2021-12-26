@@ -51,8 +51,8 @@ int main(int argc, char* argv[]) {
 			break;
 
 		// If the board is in a check state, notify the players
-        } else if (game.in_check(is_turn_white)) {
-        std::cout << "You are in check!" << std::endl;
+        	} else if (game.in_check(is_turn_white)) {
+        		std::cout << "You are in check!" << std::endl;
 
 		// If the board is in a stalemate state, notify the players
 		} else if (game.in_stalemate(is_turn_white)) {
@@ -63,7 +63,6 @@ int main(int argc, char* argv[]) {
 
 		// Get the next command
 		std::string choice;
-        //		std::pair<char, char> start , end;
 		std::cout << "Next command: ";
 		std::cin >> choice;
 
@@ -85,9 +84,7 @@ int main(int argc, char* argv[]) {
 				break;
 			case 'L': case 'l': {
 				// Load a game from a file
-                // TODO: add try catch blocks to handle any file i/o and gmae loading problem
-                // exit the program with return code -1 if an exception is caught here
-				try{
+				try {
 				    std::string argument;
 				    std::cin >> argument;
 				    std::ifstream ifs;
@@ -96,14 +93,14 @@ int main(int argc, char* argv[]) {
 				    ifs.close();
 				    // Check that the game is valid
 				    assert(game.is_valid_game());
-				}catch(Chess::Exception& exception){
+				} catch(Chess::Exception& exception) {
 				    std::cerr << "Cannot load the game!" << std::endl;
 				    return -1;
 				}
 				break;
 			}
 			case 'S': case 's': {
-				// Write a game to a file
+				// Writes a game to a file
 				std::string argument;
 				std::cin >> argument;
 				std::ofstream ofs;
@@ -113,7 +110,7 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 			case 'M': case 'm': {
-				// Make a move
+				// Makes a move
 				std::string argument;
 				std::cin >> argument;
 				// Validate that the move is correctly specified
@@ -123,10 +120,10 @@ int main(int argc, char* argv[]) {
 					  argument << " ) = " << argument.length() << std::endl;
 				// And make the move
 				} else {
-					try{
+					try {
 					    game.make_move(std::make_pair(argument[0], argument[1]),
                                        std::make_pair(argument[2], argument[3]));
-					}catch(Chess::Exception& exception){
+					} catch(Chess::Exception& exception){
 					    std::cerr << "Could not make move: " << exception.what() << std::endl;
 					}
 				}
@@ -146,9 +143,6 @@ int main(int argc, char* argv[]) {
 		ofs << game;
 		ofs.close();
 	}
-
-	// Run cleanup at the end to release allocated memory
-//	game.cleanup();
 
 	return 0;
 }

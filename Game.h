@@ -6,8 +6,7 @@
 #include "Board.h"
 #include "Exceptions.h"
 
-namespace Chess
-{
+namespace Chess {
 
 	class Game {
 
@@ -71,14 +70,14 @@ namespace Chess
 		// Returns true if the designated player is in mate
 		bool in_stalemate(const bool& white) const;
 
-        // Return the total material point value of the designated player
-        int point_value(const bool& white) const;
+        	// Returns the total material point value of the designated player
+        	int point_value(const bool& white) const;
 
 		// Destructor
 		~Game();
 
-        // Run cleanup for Board.cpp
-        void cleanup();
+        	// Run cleanup for Board.cpp
+        	void cleanup();
 
 	private:
 		// The board
@@ -87,11 +86,11 @@ namespace Chess
 		// Is it white's turn?
 		bool is_white_turn;
 
-        // Writes the board out to a stream
-        friend std::ostream& operator<< (std::ostream& os, const Game& game);
+        	// Writes the board out to a stream
+        	friend std::ostream& operator<< (std::ostream& os, const Game& game);
 
-        // Reads the board in from a stream
-        friend std::istream& operator>> (std::istream& is, Game& game);
+        	// Reads the board in from a stream
+        	friend std::istream& operator>> (std::istream& is, Game& game);
 	};
 }
 #endif // GAME_H

@@ -67,7 +67,8 @@ namespace Chess
         // Map to store the locations and types of each piece
         typedef std::map<Position, Piece*> BoardType;
 
-        // Iterator for the Board object
+        // Constant Iterator for the Board object
+        // Keeps track of a cell location at all times, and moves up/right
         class const_iterator {
         public:
             const_iterator(Position initial_pos) : pos(initial_pos) {};
@@ -77,10 +78,10 @@ namespace Chess
                 char cur_col = pos.first;
                 int cur_row = pos.second;
 
-                // Make sure we don't move off the board when we get to end of row
-                if (cur_col == 'H'){
+                // Makes sure we don't move off the board when we get to end of row
+                if (cur_col == 'H') {
                     // Refers to cell out of bounds of iterator (i.e. .end());
-                    if (cur_row == '8'){
+                    if (cur_row == '8') {
                         pos = Position(-1, -1);
                     } else {
                         pos = Position('A', cur_row + 1);
@@ -101,19 +102,19 @@ namespace Chess
             // Checks if two iterators don't point to the same location
             bool operator!=(const const_iterator &o) const { return !(*this == o); }
 
+            // Returns position the iterator is currently on
             Position current_pos() { return pos; }
 
         private:
-            //BoardType& parent_board;
             Position pos;
         };
 
-        // When to stop iterating through board
+        // Returns an iterator pointing to "one-past" the last cell in the board
         const_iterator cend() const {
             return const_iterator(Position(-1, -1));
         }
 
-        // Where to start iterating through the board
+        // Returns an iterator pointing to first cell in the board (bottom-left)
         const_iterator cbegin() const {
             return const_iterator(Position('A', '1'));
         }

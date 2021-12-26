@@ -6,11 +6,9 @@
 #include <sstream>
 #include <exception>
 
-namespace Chess
-{
+namespace Chess {
 	// This class describes the general class of exceptions that can be thrown within the Chess program
-	class Exception : public std::exception
-	{
+	class Exception : public std::exception {
 	protected:
 		std::string _message;
 	public:
