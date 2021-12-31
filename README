@@ -9,7 +9,7 @@ castling and en passant moves). Games can be played until there is a checkmate o
 and unfinished games can be loaded or saved from .txt files.
 
 The program relies upon principles of object oriented programming (see UML Diagram in
-chessUML.pdf). There is a Game class, a Board class, and a Piece class. A game has a
+chessUML.png). There is a Game class, a Board class, and a Piece class. A game has a
 board, and a board has pieces. Then, the kings, queens, rooks, etc (the chess pieces) are
 children of an abstract piece (is-a relationship). As each piece has different functionalities
 (i.e. movements, caputure forms, promotions, etc.), child classes inherit certain functions and
