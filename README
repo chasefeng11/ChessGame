@@ -1,29 +1,43 @@
-TEAM
+AUTHORS: Chase Feng, Madeline Estey, Jake Lee
+DATE: December 2021
 
-Jake Lee, jlee764
-Chase Feng, cfeng18
-Maddie Estey, mestey1
 
-DESIGN
+DESCRIPTION:
+A command line two-player Chess game built with C++. Taking turns, each player inputs his
+or her move, where all moves under the standard rules of chess is allowed (excluding
+castling and en passant moves). Games can be played until there is a checkmate or a stalemate,
+and unfinished games can be loaded or saved from .txt files.
 
-As seen in our UML diagram, there is a Game class, Board class, and Piece class. A game has a board, and a board has pieces. Then, 
-the kings, queens, rooks, etc (the chess pieces) are children of an abstract piece (is-a relationship). These relationships
-describe our program.
+The program relies upon principles of object oriented programming (see UML Diagram in
+chessUML.pdf). There is a Game class, a Board class, and a Piece class. A game has a
+board, and a board has pieces. Then, the kings, queens, rooks, etc (the chess pieces) are
+children of an abstract piece (is-a relationship). As each piece has different functionalities
+(i.e. movements, caputure forms, promotions, etc.), child classes inherit certain functions and
+override others. 
 
-We implemented the rule of three for Game and Board to simulate Games to check if pieces are checked by a move.
 
-Each time Game::point_value(), it loops through each remaning piece on the board of the given color, and return the sum of their
-piece-specific point values. To do this, for each piece, we call the pure virtual function in Piece.h, where it is overridden by
-the children classes returning the Piece::point_value() of the particular piece.
+INSTRUCTIONS: 
+Users should compile the program using the given Makefile, then run it by running the chess executable. 
 
-COMPLETEDNESS
+Once the program is running, a chess game using the default chess board is created, and the user is
+presented with a list of possible actions as follows:
 
-As far as we are aware, all required functionality are implemented in this project.
+1. ? - display the list of actions.
+2. Q - quit the game.
+3. L <filename> - load a game from the specified file.
+4. S <filename> — save the current game to the specified file.
+5. M <move> — try to make the specified move, where <move> is a four-character string giving the
+   column ('A'-'H') (must be an upper case to be valid!) and row ('1'-'8') of the start position, followed
+   by the column and row of the end position.
+   
+Prior to the user selecting an action, the current state of the board is presented to the user on standard
+output. The user can repeatedly enter one of the above action specifiers until the program ends, which
+happens when the game reaches checkmate or stalemate, or the user elects to quit.
 
-ADDITIONAL NOTES
 
-Helper.h was added to add ABS(), which returns the absolute value of a number. It was declared inline as it didn't require
-more than a line, and  was unnecessary to create a cpp file & an entry on Makefile just to use one function. Additionally,
-absolute was used in multiple files that it would've been tedious to create a child function in a class in all the required files.
+PROJECT NOTES:
+This project was submitted as the Final Project for Intermediate Programming (EN.601.220) at Johns Hopkins
+University.
 
-To complete this project we mostly used the pair programming method.
+Team Project Grade: A+ 
+Individual Course Grade: A
