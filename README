@@ -17,7 +17,8 @@ override others.
 
 
 INSTRUCTIONS: 
-Users should compile the program using the given Makefile, then run it by running the chess executable. 
+Users should compile the program using the given Makefile, then run it by running the chess executable.
+The program assumes the user has g++ installed. 
 
 Once the program is running, a chess game using the default chess board is created, and the user is
 presented with a list of possible actions as follows:
