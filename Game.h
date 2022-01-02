@@ -22,21 +22,12 @@ namespace Chess {
 		Game& operator=(const Game &game);
 
 		// Returns true if it is white's turn
-		/////////////////////////////////////
-		// DO NOT MODIFY THIS FUNCTION!!!! //
-		/////////////////////////////////////
 		bool turn_white() const { return is_white_turn; }
     
-        /////////////////////////////////////
-		// DO NOT MODIFY THIS FUNCTION!!!! //
-		/////////////////////////////////////
-        // Displays the game by printing it to stdout
+        	// Displays the game by printing it to stdout
 		void display() const { board.display(); }
     
-        /////////////////////////////////////
-		// DO NOT MODIFY THIS FUNCTION!!!! //
-		/////////////////////////////////////
-        // Checks if the game is valid
+        	// Checks if the game is valid
 		bool is_valid_game() const { return board.has_valid_kings(); }
 
 		// Attempts to make a move. If successful, the move is made and

@@ -8,7 +8,7 @@ namespace Chess {
         if (ABS(start.first - end.first) == ABS(start.second - end.second)){
             return true;
         }
-        
+
         return false;
     }
 }

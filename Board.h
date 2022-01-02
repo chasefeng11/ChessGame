@@ -13,8 +13,7 @@
 #include "Mystery.h"
 
 
-namespace Chess
-{
+namespace Chess {
     class Board {
 
         // Throughout, we will be accessing board positions using Position defined in Piece.h.

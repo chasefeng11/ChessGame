@@ -379,8 +379,8 @@ namespace Chess {
         game.board.remove_all();
 
         // add_piece() will throw an exception if any piece other than the designated ones
-        for(int row = '8'; row >= '1'; row--) {
-            for(int col = 'A'; col <= ('H' + 1); col++) {
+        for (int row = '8'; row >= '1'; row--) {
+            for (int col = 'A'; col <= ('H' + 1); col++) {
                 char piece_designator = is.get();
                 if (piece_designator != '-' && piece_designator != '\n') {
                     game.board.add_piece(Position(col, row), piece_designator);

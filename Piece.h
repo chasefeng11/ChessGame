@@ -5,8 +5,8 @@
 #include <string>
 
 namespace Chess {
-  // define pair of characters as a new type to represent a position on the board
-  typedef std::pair<char, char> Position;
+  	// define pair of characters as a new type to represent a position on the board
+	typedef std::pair<char, char> Position;
   
 	class Piece {
 
